@@ -1,0 +1,43 @@
+<project default="info" name="Snippets" basedir="..">
+
+	<property file="build/build.properties" />
+	<property name="project.workspace" value="${basedir}/.." />
+	<basename file="${basedir}" property="project.dir.name" />
+
+	<tstamp>
+		<format property="build.timestamp" pattern="yyyyMMddHHmmss" timezone="PST" />
+	</tstamp>
+
+	<target name="info">
+		<echo>Git targets for pushing the snippets up.</echo>
+	</target>
+	
+	<target name="local-git-push" depends="">
+			<echo>git push.....</echo>
+			<exec executable="git">
+				<arg line="push" />
+			</exec>
+	</target>
+	
+	<target name="local-git-pull" depends="">
+			<echo>git pull.....</echo>
+			<exec executable="git">
+				<arg line="pull" />
+			</exec>
+	</target>
+	
+	<target name="local-git-add" depends="">
+			<echo>git add.....</echo>
+			<exec executable="git">
+				<arg line="add ." />
+			</exec>
+	</target>
+	
+	<target name="local-git-status" depends="">
+			<echo>git add.....</echo>
+			<exec executable="git">
+				<arg line="status" />
+			</exec>
+	</target>
+
+</project>
