@@ -18,13 +18,13 @@
  */
 class dValidatorPhone extends sfValidatorRegex
 {
-  /**
-   * @see sfValidatorRegex
-   */
-  protected function configure($options = array(), $messages = array())
-  {
-    parent::configure($options, $messages);
-    $pattern = "^(1\s*[-\/\.]?)?(\((\d{3})\)|(\d{3}))\s*[-\/\.]?\s*(\d{3})\s*[-\/\.]?\s*(\d{4})\s*(([xX]|[eE][xX][tT])\.?\s*(\d+))*$";
-    $this->setOption('pattern', "/$pattern/i");
-  }
+	/**
+	 * @see sfValidatorRegex
+	 */
+	protected function configure($options = array(), $messages = array())
+	{
+		parent::configure($options, $messages);
+		$pattern = "^(1\s*[-\/\.]?)?(\((\d{3})\)|(\d{3}))\s*[-\/\.]?\s*(\d{3})\s*[-\/\.]?\s*(\d{4})\s*(([xX]|[eE][xX][tT])\.?\s*(\d+))*$";
+		$this->setOption('pattern', "/$pattern/i");
+	}
 }
