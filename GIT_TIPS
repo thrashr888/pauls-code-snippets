@@ -52,6 +52,7 @@ Local branches are fine for small projects, but if you need to collaborate with 
 At this point, the branch is just in your local repository. To push the branch to the central repository, run:
 
 	(master)$ git push origin peopleflow
+
 Now others will see this branch when they run git branch -r.
 
 ### Switching to a remote branch 28 Apr ###
