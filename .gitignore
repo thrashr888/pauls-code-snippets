@@ -1,3 +1,5 @@
 .cache
 .settings
 ~*
+.DS_Store
+.buildpath

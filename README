@@ -3,7 +3,10 @@ This is just my personal repo for code snippets.
 
 It's setup as an Eclipse PHP Project, hence those hidden files at the top.
 
-These functions were mostly written by me for a current project 
+These functions were mostly written by me for a current project
 but I also have compiled some stuff from other devs and open source repos.
 
 You'll find mostly PHP here but I also keep Ant tasks, JS and notes here.
+
+== qDB Class ==
+A very minimal DB abstraction class. It just wraps PHP's mysql functions.

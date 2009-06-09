@@ -12,28 +12,29 @@
 	</target>
 
 	<target name="local-git-push" depends="">
-		<echo>git push.....</echo>
+		<echo>git push...</echo>
 		<exec executable="git">
 			<arg line="push" />
 		</exec>
 	</target>
 
 	<target name="local-git-pull" depends="">
-		<echo>git pull.....</echo>
+		<echo>git pull...</echo>
 		<exec executable="git">
 			<arg line="pull" />
 		</exec>
 	</target>
 
 	<target name="local-git-add" depends="">
-		<echo>git add.....</echo>
+		<input message="Add what? Default:" addproperty="git.add.arg" defaultvalue="." />
+		<echo>git add... "${git.add.arg}"</echo>
 		<exec executable="git">
-			<arg line="add ." />
+			<arg line="add ${git.add.arg}" />
 		</exec>
 	</target>
 
 	<target name="local-git-status" depends="">
-		<echo>git add.....</echo>
+		<echo>git status...</echo>
 		<exec executable="git">
 			<arg line="status" />
 		</exec>
@@ -41,7 +42,7 @@
 
 	<target name="local-git-commit" depends="">
 		<input message="Please enter your commit message:" addproperty="git.commit.message" />
-		<echo>git commit..... "${git.commit.message}"</echo>
+		<echo>git commit... "${git.commit.message}"</echo>
 		<exec executable="git">
 			<arg line='commit -m "${git.commit.message}"' />
 		</exec>
