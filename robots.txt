@@ -1,2 +1,5 @@
+# robots.txt snippets
+# by thrashr888
+
 #User-agent: *
 #Disallow:

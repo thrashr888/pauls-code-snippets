@@ -3,18 +3,18 @@
 Source: [https://37s.backpackit.com/pub/1465067](https://37s.backpackit.com/pub/1465067)
 
 Git Resources
-Git, though remarkably handy and powerful, is also remarkably hard to use sometimes. Though you can learn the basics easily enough, it can be really tough to dig yourself out of certain corners if you don’t understand what’s going on under the covers.
+Git, though remarkably handy and powerful, is also remarkably hard to use sometimes. Though you can learn the basics easily enough, it can be really tough to dig yourself out of certain corners if you donÔøΩt understand whatÔøΩs going on under the covers.
 
 This page provides links to documents, how-tos, cheat sheets, tips, and tricks related to learning and using git.
 
 ## Links ##
 cheat git
-Git – SVN Crash Course
+Git - SVN Crash Course
 Git Magic
 Advanced HOWTOs
 Git Internals ($9 Peepcode PDF)
 
-## How to clone our apps ##  
+## How to clone our apps ##
 	$ git clone [devserver url]:/u/git/[application].git
 
 ## Tips & Tricks ##
@@ -44,7 +44,7 @@ Finally, push to the remote repository:
 Anyone will be able to clone and track the remote repository:
 
 	$ git clone ssh://dev.example.com/u/git/plugins/plugin_name.git
-	
+
 ### Creating a remote branch 11 Jun ###
 Local branches are fine for small projects, but if you need to collaborate with others, you can create a remote branch. Start by creating a local branch in your repository:
 
@@ -61,10 +61,10 @@ Now others will see this branch when they run git branch -r.
 e.g.
 	$ git checkout -b v1-stable origin/v1-stable
 
-This will checkout the v1-stable branch in the “origin” remote repository, and will put it in a new local branch called “v1-stable”. By default, git will cause this branch to “track” the remote branch (meaning “push” and “pull” will work as epxected, pushing to or pulling from that remote branch).
+This will checkout the v1-stable branch in the `origin` remote repository, and will put it in a new local branch called `v1-stable`. By default, git will cause this branch to `track` the remote branch (meaning `push` and `pull` will work as epxected, pushing to or pulling from that remote branch).
 
 ### Removing a remote branch 28 Apr ###
-Most places on the web will tell you this isn’t possible, but one blog gave this helpful little tip:
+Most places on the web will tell you this isn't possible, but one blog gave this helpful little tip:
 
 	$ git branch -d {your_branch_here}
 	$ git push {repository} :heads/{your_branch_here}
@@ -72,7 +72,7 @@ Most places on the web will tell you this isn’t possible, but one blog gave this
 Where {repository} is a full repository spec, or a name for such a repository in .git/config (e.g., origin, etc.)
 
 ### Converting a Subversion repository to Git 29 May ###
-Assuming we’re converting ExampleApp to git:
+Assuming we're converting ExampleApp to git:
 
 	mkdir /path/to/exampleapp-git.tmp
 	cd /path/to/exampleapp-git.tmp
@@ -80,14 +80,14 @@ Assuming we’re converting ExampleApp to git:
 	git config svn.authorsFile /path/to/authors.txt
 	git-svn fetch
 
-The authors.txt file mentioned above is the file attached, below. Note that for large repositories, the ‘fetch’ command here can take quite some time (Basecamp took almost an hour and a half).
+The authors.txt file mentioned above is the file attached, below. Note that for large repositories, the `fetch` command here can take quite some time (Basecamp took almost an hour and a half).
 
-Once the fetch finishes, we just need to do some cleanup. First, let’s kill all of the remote tracking branches that we no longer need.
+Once the fetch finishes, we just need to do some cleanup. First, let's kill all of the remote tracking branches that we no longer need.
 
 	git branch -r
-	git branch -r -d stale-branch stale-branch …
+	git branch -r -d stale-branch stale-branch ÔøΩ
 
-Where “stale-branch” is the name of a remote-tracking branch that we no longer need.
+Where `stale-branch` is the name of a remote-tracking branch that we no longer need.
 
 Next, we can run prune to get rid of any orphaned objects, and gc to clean things up:
 
@@ -102,11 +102,11 @@ Finally, we check out any remote tracking branches, so that when we later push t
 
 	git checkout -b branch-name branch-name
 
-The branch-name is specified twice because the first one is the name you want to give the local branch, and the second is the name of the remote branch you want to track. Do the above for each branch (“branch-name”) that you want to keep.
+The branch-name is specified twice because the first one is the name you want to give the local branch, and the second is the name of the remote branch you want to track. Do the above for each branch (`branch-name`) that you want to keep.
 
-Note that if the branch that was checked out upon completion of the fetch was not the master (trunk), then you’ll need to use “git branch -m” to rename the current branch to what was actually checked out, and then checkout trunk as master (git checkout -b master trunk).
+Note that if the branch that was checked out upon completion of the fetch was not the master (trunk), then you'll need to use `git branch -m` to rename the current branch to what was actually checked out, and then checkout trunk as master (git checkout -b master trunk).
 
-Once that is done, we can create our new “bare” repository, where we will all push to and pull from:
+Once that is done, we can create our new "bare" repository, where we will all push to and pull from:
 
 	cd /u/git
 	sudo -u app mkdir -m 0770 exampleapp.git
@@ -118,11 +118,11 @@ Then, we move back to our converted repository, and push it all to our bare repo
 	cd /path/to/exampleapp-git.tmp
 	git push --all /u/git/exampleapp.git
 
-The “--all” flag tells git that we want to push all branches, not just the current branch. Once that is done, you should be able to clone the new repository from your local machine:
+The `--all` flag tells git that we want to push all branches, not just the current branch. Once that is done, you should be able to clone the new repository from your local machine:
 
 	git clone ssh://{repo-server}/u/git/exampleapp.git
 
 Done!
 
-## Files ##  
-Git from the Bottom Up is kind of an “anti-How-To”. It walks you through the fundamental concepts and shows you how they fit together. It’s a great compliment to the higher-level, command-oriented git tutorials. (Via http://www.newartisans.com/blog_files/git.from.bottom.up.php)
+## Files ##
+Git from the Bottom Up is kind of an "anti-How-To". It walks you through the fundamental concepts and shows you how they fit together. It's a great compliment to the higher-level, command-oriented git tutorials. (Via http://www.newartisans.com/blog_files/git.from.bottom.up.php)
