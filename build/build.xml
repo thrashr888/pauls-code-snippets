@@ -11,21 +11,21 @@
 		<echo>Git targets for pushing the snippets out.</echo>
 	</target>
 
-	<target name="local-git-push" depends="">
+	<target name="git-push" depends="">
 		<echo>git push...</echo>
 		<exec executable="git">
 			<arg line="push" />
 		</exec>
 	</target>
 
-	<target name="local-git-pull" depends="">
+	<target name="git-pull" depends="">
 		<echo>git pull...</echo>
 		<exec executable="git">
 			<arg line="pull" />
 		</exec>
 	</target>
 
-	<target name="local-git-add" depends="">
+	<target name="git-add" depends="">
 		<input message="Add what? Default:" addproperty="git.add.arg" defaultvalue="." />
 		<echo>git add... "${git.add.arg}"</echo>
 		<exec executable="git">
@@ -33,14 +33,14 @@
 		</exec>
 	</target>
 
-	<target name="local-git-status" depends="">
+	<target name="git-status" depends="">
 		<echo>git status...</echo>
 		<exec executable="git">
 			<arg line="status" />
 		</exec>
 	</target>
 
-	<target name="local-git-commit" depends="">
+	<target name="git-commit" depends="">
 		<input message="Please enter your commit message:" addproperty="git.commit.message" />
 		<echo>git commit... "${git.commit.message}"</echo>
 		<exec executable="git">
