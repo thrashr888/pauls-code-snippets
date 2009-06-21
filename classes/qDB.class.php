@@ -22,6 +22,11 @@ class qDB{
 		return $this->log;
 	}
 
+	/**
+	 * @param $conn db connection
+	 * @return singleton instance
+	 * @TODO test to make sure this actually works as i doubt you can actually use resources as keys :(
+	 */
 	public static function getInstance($conn){
 		if(isset(self::$instance[$conn])){
 			self::$instance[$conn] = new qDB($conn);
