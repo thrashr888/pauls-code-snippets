@@ -12,30 +12,30 @@
 	</target>
 
 	<target name="git-push" depends="">
-		<echo>git push...</echo>
-		<exec executable="git">
+		<echo>${git.path} push...</echo>
+		<exec executable="${git.path}">
 			<arg line="push" />
 		</exec>
 	</target>
 
 	<target name="git-pull" depends="">
-		<echo>git pull...</echo>
-		<exec executable="git">
+		<echo>${git.path} pull...</echo>
+		<exec executable="${git.path}">
 			<arg line="pull" />
 		</exec>
 	</target>
 
 	<target name="git-add" depends="">
 		<input message="Add what? Default:" addproperty="git.add.arg" defaultvalue="." />
-		<echo>git add... "${git.add.arg}"</echo>
-		<exec executable="git">
+		<echo>${git.path} add... "${git.add.arg}"</echo>
+		<exec executable="${git.path}">
 			<arg line="add ${git.add.arg}" />
 		</exec>
 	</target>
 
 	<target name="git-status" depends="">
-		<echo>git status...</echo>
-		<exec executable="git">
+		<echo>${git.path} status...</echo>
+		<exec executable="${git.path}">
 			<arg line="status" />
 		</exec>
 	</target>
@@ -43,7 +43,7 @@
 	<target name="git-commit" depends="">
 		<input message="Please enter your commit message:" addproperty="git.commit.message" />
 		<echo>git commit... "${git.commit.message}"</echo>
-		<exec executable="git">
+		<exec executable="/usr/local/git/bin/git">
 			<arg line='commit -m "${git.commit.message}"' />
 		</exec>
 	</target>
